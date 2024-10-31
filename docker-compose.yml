@@ -1,9 +1,9 @@
-version: '3.8' # Định phiên bản Docker Compose
-
+version: '3'
 services:
   app:
+    image: cv_curriculum_vitae
     build:
-      context: . # Thư mục chứa Dockerfile
-      dockerfile: Dockerfile # Tên file Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:80" # Mapping port 8080 của máy host tới port 80 của container
+      - "8080:8080" # Ánh xạ port 8080 của container đến port 8080 của máy chủ
