@@ -6,4 +6,4 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080" # Ánh xạ port 8080 của container đến port 8080 của máy chủ
+      - "80:80" # Ánh xạ port 80 của container đến port 80 của máy chủ
