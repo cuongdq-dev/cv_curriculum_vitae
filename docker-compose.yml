@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: . # Xây dựng từ Dockerfile
+    image: cv_curriculum_vitae # Đặt tên cho image
+    ports:
+      - "8080:3000" # Mapping port 8080 trên host tới port 3000 trong container
+    volumes:
+      - .:/app # Mount folder hiện tại vào /app trong container
+    environment:
+      NODE_ENV: development # Biến môi trường cho development
