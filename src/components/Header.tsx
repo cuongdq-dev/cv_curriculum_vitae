@@ -18,7 +18,6 @@ export const Header = ({ data }: { data?: IMain }) => {
                <li><a className="smoothscroll" href="#resume">Resume</a></li>
                <li><a className="smoothscroll" href="#portfolio">Works</a></li>
                <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-               <li><a className="smoothscroll" href="#contact">Contact</a></li>
             </ul>
 
          </nav>
@@ -38,6 +37,6 @@ export const Header = ({ data }: { data?: IMain }) => {
             <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
          </p>
 
-      </header>
+      </header >
    )
 }
