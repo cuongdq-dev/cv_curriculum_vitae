@@ -1,4 +1,3 @@
-version: '2.3'
 services:
   app:
     image: cv_curriculum_vitae
