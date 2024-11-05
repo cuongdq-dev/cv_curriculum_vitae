@@ -32,5 +32,8 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # # Set the working directory
 WORKDIR /usr/share/nginx/html
 
+# Expose port 3000
+EXPOSE 3000
+
 # # Start nginx server
 CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
