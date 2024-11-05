@@ -24,16 +24,13 @@ FROM nginx:latest
 
 # # Overwriting nginx config with our own config file
 RUN rm -rf /etc/nginx/conf.d/default.conf
-COPY ./nginx/default.conf /etc/nginx/sites-available/cv.ck-tech.asia
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # # Copy over the build created in the Step 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # # Set the working directory
 WORKDIR /usr/share/nginx/html
-
-# Expose port 3000
-EXPOSE 3000
 
 # # Start nginx server
 CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
