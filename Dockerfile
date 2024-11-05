@@ -20,17 +20,17 @@ RUN npm run build
 # Step 2: Set up nginx to serve the app
 # --------------------------------------
 # Use nginx:latest as the base image
-# FROM nginx:latest
+FROM nginx:latest
 
 # # Overwriting nginx config with our own config file
-# RUN rm -rf /etc/nginx/conf.d/default.conf
-# COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+RUN rm -rf /etc/nginx/conf.d/default.conf
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # # Copy over the build created in the Step 1
-# COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # # Set the working directory
-# WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
 
 # # Start nginx server
-# CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
+CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
