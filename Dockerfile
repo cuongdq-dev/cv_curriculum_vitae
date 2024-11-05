@@ -10,11 +10,11 @@ WORKDIR /app
 
 # Copy package.json and install app dependencies
 COPY package.json .
-RUN npm install
+RUN yarn
 
 # Copy other project files and build
 COPY . ./
-RUN npm run build
+RUN yarn build
 
 # --------------------------------------
 # Step 2: Set up nginx to serve the app
